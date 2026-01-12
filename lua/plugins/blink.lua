@@ -9,6 +9,8 @@ return {
   -- build = 'cargo build --release',
   -- If you use nix, you can build from source using latest nightly rust with:
   -- build = 'nix run .#build-plugin',
+  --
+  event = { "InsertEnter", "CmdLineEnter"},
 
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
