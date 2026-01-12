@@ -9,6 +9,9 @@ return {
 		{ "<leader>E", false },
 		{ "<leader>e", false },
 	},
+  init = function()
+    _G.Snacks = require("snacks")
+  end,
 	opts = {
 		bigfile = { enabled = true },
     		indent = { enabled = true },
