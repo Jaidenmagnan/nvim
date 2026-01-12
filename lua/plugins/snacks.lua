@@ -1,5 +1,8 @@
 return {
 	"folke/snacks.nvim",
+	priority = 1000,
+	lazy = false,
+	  ---@type snacks.Config
 	keys = {
 		{ "<leader>fe", false },
 		{ "<leader>fE", false },
@@ -7,12 +10,20 @@ return {
 		{ "<leader>e", false },
 	},
 	opts = {
+		bigfile = { enabled = true },
+    		indent = { enabled = true },
+    		input = { enabled = true },
+    		picker = { enabled = true },
+    		notifier = { enabled = true },
+    		quickfile = { enabled = true },
+    		scope = { enabled = true },
+    		scroll = { enabled = true },
+    		statuscolumn = { enabled = true },
+    		words = { enabled = true },
 		explorer = { enabled = false },
 		dashboard = {
+			enabled = true,
 			preset = {
-				pick = function(cmd, opts)
-					return LazyVim.pick(cmd, opts)()
-				end,
 				header = [[
 ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗
 ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║
@@ -29,8 +40,6 @@ return {
          { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
          { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
          { icon = " ", key = "s", desc = "Restore Session", section = "session" },
-         { icon = " ", key = "x", desc = "Lazy Extras", action = ":LazyExtras" },
-         { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy" },
          { icon = " ", key = "q", desc = "Quit", action = ":qa" },
         },
 			},
