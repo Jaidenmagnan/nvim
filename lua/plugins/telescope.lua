@@ -1,6 +1,6 @@
 local function find_project_root()
     -- Look for .git upward from the current file's directory
-    local root = vim.fs.root(0, { ".git" })
+    local root = vim.fs.root(0, { ".groot", ".git" })
     return root or vim.fn.expand("%:p:h")
 end
 
